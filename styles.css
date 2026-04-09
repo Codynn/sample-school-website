@@ -567,14 +567,14 @@ section {
 
 .photo-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-auto-rows: 150px;
-  gap: 10px;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 16px;
 }
 
-.cell-1 {
-    grid-area: 1 / 1 / 1/ 2;
-}
+.cell-1 { grid-column: 1; grid-row: 1 / 3; }
+.cell-7 { grid-column: 8; grid-row: 1 / 3; }
+.row1-mid { grid-column: span 3; }
+.row2-mid { grid-column: span 2; }
 
 
 .gallery-nav{
@@ -592,7 +592,134 @@ section {
     border-color: #688200;
     cursor: pointer;
     background-color: #D1DBAD;
+}
 
+.apply-section{
+    position: relative;
+    height: 465px;
+}
+
+.apply-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+.apply-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: hsla(0, 0%, 0%, 0.6);
+  border-radius: 24px;
+}
+
+.apply-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  z-index:1;
+}
+
+.apply-content h2{
+    color: white;
+}
+
+.apply-btn{
+    width: 148px;
+    height: 40px;
+    border-radius: 8px;
+    border-width: 2px 2px 6px 2px;
+    border-style: solid;
+    border-color: #688200;
+    background-color: #D1DBAD;
+    cursor: pointer;
+}
+
+.footer{
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0 60px;
+}
+
+.footer-container{
+    display: flex;
+    align-items: center;
+    gap: 394px;
+    padding-top: 32px;
+    border-bottom: 1px solid hsla(0, 0%, 88%, 1);
+}
+
+.footer-header{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 8px;
+}
+
+.footer-header span{
+    font-family: Sora;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: 0%;
+
+}
+
+.footer-left p{
+    margin-bottom: 16px;
+    width: 503px;
+}
+
+.footer-right{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.footer-socials a{
+    max-width: 20px;
+    max-height: 20px;
+}
+
+.map img{
+    border-radius: 16px;
+}
+
+.footer-bottom{
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+}
+
+.creator{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.creator img{
+    max-width: 25px;
+    max-height: 25px;;
+}
+
+.footer-btn{
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border-width: 2px 2px 6px 2px;
+    border-style: solid;
+    border-color: #688200;
+    background-color: #D1DBAD;
+    cursor: pointer;
+    position: fixed;
+    right: 60px;
+    bottom: 40px;
 }
 
 
