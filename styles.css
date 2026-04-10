@@ -227,6 +227,11 @@ section {
     border-right: none;
 }
 
+.about-header{
+    text-align: center;
+    width: 946px;
+}
+
 .about-section{
     display: flex;
     flex-direction: column;
@@ -235,18 +240,6 @@ section {
     padding: 0 32px;
 }
 
-.about-top{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 946px;
-}
-
-.about-top p{
-    text-align: center;
-    font-size: 1.05rem;
-    line-height: 1.65;
-}
 .about-item{
     display: flex;
     gap: 40px;
