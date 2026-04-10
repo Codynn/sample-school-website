@@ -32,8 +32,8 @@ p {
 }
 
 nav {
+    width: 100%;
     background: var(--primary-background);
-    position: relative;
     top: 0;
     z-index: 1000;
 }
@@ -45,10 +45,8 @@ nav {
     padding: 16px 32px;
     max-width: 1440px;
     margin: 0 auto;
-
 }
 
-/* Logo + Name */
 .logo {
     display: flex;
     align-items: center;
@@ -67,7 +65,6 @@ nav {
     font-weight: 600;
 }
 
-/* Nav Menu */
 .nav-menu {
     display: flex;
     align-items: center;
@@ -86,7 +83,6 @@ nav {
     color: #0066cc;
 }
 
-/* Hamburger */
 .menu-toggle {
     display: none;
     font-size: 16px;
@@ -110,12 +106,14 @@ nav {
     padding: 8px 16px;
 }
 
+
 #hero-container {
     overflow: hidden;
-    height: 70vh;
+    height: 100vw;
     min-height: 420px;
-    position: sticky;
-    /*top: 80px;*/
+    /* FIX: cap hero height so it doesn't take up the full viewport on wide screens */
+    max-height: 680px;
+    position: relative;
     z-index: 1;
     display: flex;
     flex-direction: column;
@@ -125,16 +123,6 @@ nav {
     padding: 0 32px;
 }
 
-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    max-width: 1440px;
-    margin: 0 auto;
-    margin-bottom: 200px;
-}
-
 #hero-container img {
     position: absolute;
     inset: 0;
@@ -142,16 +130,13 @@ section {
     height: 100%;
     object-fit: cover;
     object-position: center center;
-    transform: scale(1.08);
-    transform-origin: center center;
+    /* FIX: was position:fixed which caused the image to bleed out of the container */
     z-index: -1;
-    transition: transform 0.5s ease;
 }
 
 #hero-container h2,
 #hero-container p {
     position: relative;
-    z-index: 2;
     color: white;
     margin: 0;
 }
@@ -201,6 +186,7 @@ section {
     gap: 16px;
 }
 
+
 .contact-info span {
     display: flex;
     align-items: center;
@@ -222,6 +208,7 @@ section {
 }
 
 .stat-item {
+.stat-item {
     border-right: 1px solid #1A355B;
     padding: 0 40px;
     flex: 1;
@@ -229,6 +216,7 @@ section {
     text-align: center;
 }
 
+.stat-item:last-child {
 .stat-item:last-child {
     border-right: none;
 }
@@ -250,20 +238,28 @@ section {
 .about-item {
     display: flex;
     gap: 40px;
+    align-items: center;
+    /* FIX: added align-items so image and text are vertically centered */
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .about-item img {
+.about-item img {
     max-width: 597px;
+    width: 100%;
     height: auto;
     border-radius: 20px;
 }
 
+.about-item p {
 .about-item p {
     line-height: 1.65;
     max-width: 683px;
     margin-bottom: 16px;
 }
 
+.about-item button {
 .about-item button {
     width: 148px;
     height: 40px;
@@ -274,6 +270,9 @@ section {
     border-color: var(--button-border-color);
     color: var(--button-text);
     cursor: pointer;
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .message-section {
@@ -281,13 +280,14 @@ section {
     flex-direction: column;
     max-width: 1200px;
     margin: 0 auto;
-    margin-bottom: 200px;
+    margin-bottom: 80px;
+    padding: 0 32px;
+    /* FIX: reduced margin-bottom from 200px and added horizontal padding */
 }
 
 .message-section h2 {
     text-align: center;
     margin-bottom: 32px;
-
 }
 
 .message-content {
@@ -295,12 +295,18 @@ section {
     background-color: #d4e6c3;
     border-radius: 20px;
     gap: 32px;
-    width: 1200px;
-    height: 440px;
-    padding: 32px;
+    max-width: 1200px;
+    width: 100%;
+    /* FIX: removed fixed height so content never gets clipped */
+    min-height: 300px;
+    padding: 36px 36px 80px 36px;
+    /* FIX: added bottom padding so message-nav buttons don't overlap text */
     position: relative;
+    box-sizing: border-box;
+    align-items: flex-start;
 }
 
+.quote-icon {
 .quote-icon {
     height: 70px;
     width: 70px;
@@ -320,6 +326,7 @@ section {
 }
 
 .message-nav {
+.message-nav {
     display: flex;
     gap: 16px;
     position: absolute;
@@ -328,6 +335,7 @@ section {
 }
 
 .msg-btn {
+.msg-btn {
     width: 40px;
     height: 40px;
     border: none;
@@ -335,8 +343,10 @@ section {
     cursor: pointer;
     background-color: var(--button-border-color);
     color: var(--button-color);
+    font-size: 16px;
 }
 
+.why-section {
 .why-section {
     display: flex;
     flex-direction: column;
@@ -350,11 +360,15 @@ section {
 }
 
 .why-header {
+.why-header {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 16px;
+    text-align: center;
 }
+
+.why-cards {
 
 .why-cards {
     display: flex;
@@ -362,8 +376,11 @@ section {
     justify-content: center;
     gap: 24px;
     position: relative;
+    max-width: 1140px;
+    width: 100%;
 }
 
+.why-card {
 .why-card {
     display: flex;
     flex-direction: column;
@@ -376,12 +393,14 @@ section {
 
 .why-card img {
     margin-bottom: 16px;
+    margin-bottom: 16px;
 }
 
 .why-card h3 {
     margin-bottom: 4px;
 }
 
+.why-card p {
 .why-card p {
     text-align: center;
     line-height: 1.65;
@@ -393,8 +412,10 @@ section {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
+    z-index: 1;
 }
 
+.facilities-section {
 .facilities-section {
     display: flex;
     flex-direction: column;
@@ -402,15 +423,17 @@ section {
     background-color: #E0DBCE;
     border-radius: 32px;
     max-width: 100%;
-    padding: 150px;
-    gap: 60px;
-    margin-bottom: 0;
+    padding: 80px 60px;
+    /* FIX: reduced padding from 150px */
+    gap: 40px;
 }
 
+.facilities-header {
 .facilities-header {
     text-align: center;
 }
 
+.facilities-gallery {
 .facilities-gallery {
     display: flex;
 }
@@ -424,6 +447,7 @@ section {
 }
 
 .explore-btn {
+.explore-btn {
     width: 148px;
     height: 40px;
     border-radius: 8px;
@@ -432,8 +456,13 @@ section {
     border-color: #688200;
     cursor: pointer;
     background-color: #D1DBAD;
+    font-family: 'Sora', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--button-text);
 }
 
+.programs-section {
 .programs-section {
     display: flex;
     flex-direction: column;
@@ -442,11 +471,12 @@ section {
     color: white;
     border-radius: 32px;
     max-width: 100%;
-    padding: 150px;
-    gap: 60px;
-    margin-bottom: 0;
+    padding: 80px 40px;
+    /* FIX: reduced padding from 150px */
+    gap: 40px;
 }
 
+.programs-header {
 .programs-header {
     display: flex;
     flex-direction: column;
@@ -454,11 +484,14 @@ section {
 }
 
 .program-cards {
+.program-cards {
     display: flex;
     justify-content: center;
     gap: 24px;
+    flex-wrap: wrap;
 }
 
+.program-card {
 .program-card {
     display: flex;
     flex-direction: column;
@@ -470,6 +503,7 @@ section {
 
 .program-card img {
     margin-bottom: 16px;
+    margin-bottom: 16px;
 }
 
 .program-card h3 {
@@ -477,6 +511,7 @@ section {
     margin-bottom: 4px;
 }
 
+.program-card p {
 .grade {
     font-size: 18px;
     font-weight: 800;
@@ -492,13 +527,16 @@ section {
 }
 
 .program-card:nth-child(2) {
+.program-card:nth-child(2) {
     background-color: #32BC3E;
 }
 
 .program-card:nth-child(3) {
+.program-card:nth-child(3) {
     background-color: #EA2325;
 }
 
+.notice-section {
 .notice-section {
     display: flex;
     flex-direction: column;
@@ -506,14 +544,17 @@ section {
     background-color: white;
     border-radius: 32px;
     max-width: 100%;
-    padding: 150px 60px;
+    padding: 80px 60px;
+    /* FIX: reduced padding from 150px */
     gap: 32px;
 }
 
 .notice-header {
+.notice-header {
     text-align: center;
 }
 
+.notice-cards {
 .notice-cards {
     display: flex;
     flex-wrap: wrap;
@@ -522,6 +563,7 @@ section {
     margin-bottom: 32px;
 }
 
+.notice-card {
 .notice-card {
     display: flex;
     flex-direction: column;
@@ -536,7 +578,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px;
+    padding: 12px 16px;
     background-color: #1A355B;
     color: white;
     border-radius: 20px 20px 0 0;
@@ -554,17 +596,26 @@ section {
 }
 
 .notice-body {
-    padding: 0 16px;
+    padding: 14px 16px;
 }
 
 .notice-body h3 {
     white-space: nowrap;
-    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* FIX: added overflow + ellipsis to prevent long titles breaking layout */
+    margin-bottom: 6px;
 }
 
 .notice-body p {
     margin-bottom: 8px;
+    /* FIX: clamp body text to 3 lines so cards stay consistent height */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
+
 
 .notice-body a {
     font-size: 14px;
@@ -573,12 +624,16 @@ section {
 }
 
 .gallery-section {
+.gallery-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 60px;
+    gap: 40px;
+    padding: 80px 40px;
+    /* FIX: added padding so gallery isn't flush against edges */
 }
 
+.gallery-header {
 .gallery-header {
     text-align: center;
 }
@@ -614,9 +669,9 @@ section {
 }
 
 .gallery-nav button {
+.gallery-nav button {
     width: 40px;
     height: 40px;
-    border: none;
     border-radius: 8px;
     border-width: 2px 2px 6px 2px;
     border-style: solid;
@@ -759,7 +814,6 @@ section {
 
 /* ================== RESPONSIVE ================== */
 
-/* Tablet (441px to 1024px) - Only Hamburger */
 @media (min-width: 441px) and (max-width: 1024px) {
     .navbar-container {
         padding: 16px 32px;
@@ -812,9 +866,39 @@ section {
     .menu-toggle {
         display: block;
     }
+
+    .stat-item {
+        padding: 0 40px;
+    }
+
+    .why-card {
+        width: 100%;
+        max-width: 480px;
+    }
+
+    .facilities-gallery img {
+        width: calc(50% - 8px);
+        max-width: none;
+    }
+
+    .notice-grid-override {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 140px);
+    }
+
+    .cell-1 { grid-column: 1 / 3; grid-row: 1 / 3; }
+    .cell-2 { grid-column: 3 / 4; grid-row: 1 / 2; }
+    .cell-3 { grid-column: 3 / 4; grid-row: 2 / 3; }
+    .cell-4 { grid-column: 1 / 2; grid-row: 3 / 4; }
+    .cell-5 { grid-column: 2 / 3; grid-row: 3 / 4; }
+    .cell-6 { grid-column: 3 / 4; grid-row: 3 / 4; }
+    .cell-7 { display: none; }
 }
 
-/* Mobile (≤ 440px) - Only Hamburger */
 @media (max-width: 440px) {
     .navbar-container {
         padding: 16px;
@@ -823,7 +907,13 @@ section {
 
     #hero-container {
         padding: 0 16px;
-        margin-bottom: 100px;
+        max-height: 400px;
+    }
+
+    .top-bar {
+        padding: 8px 16px;
+        flex-direction: column;
+        gap: 8px;
     }
 
     .nav-menu {
@@ -841,12 +931,14 @@ section {
         align-items: flex-start;
     }
 
+
     .nav-menu li,
     .nav-menu a {
         width: 100%;
         border-bottom: 1px solid #eee;
         background-color: var(--primary-background);
     }
+
 
     .nav-menu a {
         display: block;
@@ -870,15 +962,47 @@ section {
     .menu-toggle {
         display: block;
     }
-}
 
-/* Desktop - Full Menu */
-@media (min-width: 1025px) {
-    .nav-menu {
-        display: flex;
-    }
+    h2 { font-size: 28px; }
 
-    .menu-toggle {
-        display: none;
+    .stats-bar { flex-wrap: wrap; gap: 16px; padding: 24px 16px; }
+    .stat-item { border-right: none; border-bottom: 1px solid var(--primary-color); padding: 12px 24px; width: calc(50% - 8px); }
+    .stat-item:nth-child(odd) { border-right: 1px solid var(--primary-color); }
+    .stat-item:last-child { border-bottom: none; }
+
+    .about-section { padding: 40px 16px; gap: 32px; }
+    .about-item { flex-direction: column; }
+    .about-item img { max-width: 100%; }
+
+    .message-section { padding: 0 16px; margin-bottom: 40px; }
+    .message-content { flex-direction: column; padding: 24px 24px 80px; gap: 16px; }
+    .img-quote { flex-direction: row; align-items: center; }
+    .principal-img { width: 80px; }
+
+    .why-section { padding: 60px 16px; gap: 32px; }
+    .why-card { width: 100%; }
+
+    .facilities-section { padding: 60px 16px; gap: 24px; }
+    .facilities-gallery { gap: 8px; }
+    .facilities-gallery img { width: calc(50% - 4px); }
+
+    .programs-section { padding: 60px 16px; gap: 24px; }
+    .program-cards { flex-direction: column; align-items: center; }
+
+    .notice-section { padding: 60px 16px; }
+    .notice-cards { flex-direction: column; align-items: center; }
+    .notice-card { max-width: 100%; }
+
+    .gallery-section { padding: 60px 16px; gap: 24px; }
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 120px);
     }
+    .cell-1 { grid-column: 1 / 3; grid-row: 1 / 3; }
+    .cell-2 { grid-column: 1 / 2; grid-row: 3 / 4; }
+    .cell-3 { grid-column: 2 / 3; grid-row: 3 / 4; }
+    .cell-4 { grid-column: 1 / 2; grid-row: 4 / 5; }
+    .cell-5 { grid-column: 2 / 3; grid-row: 4 / 5; }
+    .cell-6 { display: none; }
+    .cell-7 { display: none; }
 }
