@@ -15,6 +15,7 @@
 
 body {
     font-family: 'Sora', 'Segoe UI', Arial, sans-serif;
+    background-color: var(--primary-background);
 }
 
 h2{
@@ -205,7 +206,7 @@ section {
 .section-container{
     position: relative;
     z-index: 10;
-    background-color: var(--primary-background);
+    
     border-radius: 60px 60px 0 0;
     margin-top: -59px;
 }
@@ -518,7 +519,7 @@ section {
     gap:16px;
 }
 
-.notice-card header {
+.card-top {
     max-width: 100%;
     display: flex;
     align-items: center;
@@ -529,6 +530,16 @@ section {
     border-radius: 20px 20px 0 0;
 }
 
+.badge {
+    background-color: white;
+    padding: 2px 8px;
+    border-radius: 32px;
+    color: black;
+}
+
+.far .fa-calendar{
+    margin-left: 4px;
+}
 .notice-body {
     padding: 0 16px;
 }
