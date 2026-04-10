@@ -11,6 +11,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
@@ -25,12 +26,14 @@ h2{
 }
 
 h3, p{
+h3, p{
     font-size: 16px;
     line-height: 1.6;
 }
 
 nav {
     background: var(--primary-background);
+    position: relative;
     position: relative;
     top: 0;
     z-index: 1000;
@@ -44,8 +47,10 @@ nav {
     max-width: 1440px;
     margin: 0 auto;
 
+
 }
 
+/* Logo + Name */
 /* Logo + Name */
 .logo {
     display: flex;
@@ -66,6 +71,7 @@ nav {
 }
 
 /* Nav Menu */
+/* Nav Menu */
 .nav-menu {
     display: flex;
     align-items: center;
@@ -84,6 +90,7 @@ nav {
     color: #0066cc;
 }
 
+/* Hamburger */
 /* Hamburger */
 .menu-toggle {
     display: none;
@@ -110,7 +117,10 @@ nav {
 #hero-container {
     overflow: hidden;
     height: 70vh;
+    height: 70vh;
     min-height: 420px;
+    position: sticky;
+    /*top: 80px;*/
     position: sticky;
     /*top: 80px;*/
     z-index: 1;
@@ -132,6 +142,16 @@ section {
     margin-bottom: 200px;
 }
 
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1440px;
+    margin: 0 auto;
+    margin-bottom: 200px;
+}
+
 #hero-container img {
     position: absolute;
     inset: 0;
@@ -141,13 +161,17 @@ section {
     object-position: center center;
     transform: scale(1.08);
     transform-origin: center center;
+    transform: scale(1.08);
+    transform-origin: center center;
     z-index: -1;
+    transition: transform 0.5s ease;
     transition: transform 0.5s ease;
 }
 
 #hero-container h2,
 #hero-container p {
     position: relative;
+    z-index: 2;
     z-index: 2;
     color: white;
     margin: 0;
@@ -204,12 +228,14 @@ section {
 }
 
 .section-container{
+.section-container{
     position: relative;
     z-index: 10;
     border-radius: 60px 60px 0 0;
     margin-top: -59px;
 }
 
+.stats-bar{
 .stats-bar{
     display: flex;
     flex-direction: row;
@@ -218,11 +244,13 @@ section {
 }
 
 .stat-item{
+.stat-item{
     border-right: 1px solid #1A355B;
     padding: 0 120px;
     text-align: center;
 }
 
+.stat-item:last-child{
 .stat-item:last-child{
     border-right: none;
 }
@@ -246,17 +274,20 @@ section {
 }
 
 .about-item img{
+.about-item img{
     max-width: 597px;
     height: auto;
     border-radius: 20px;
 }
 
 .about-item p{
+.about-item p{
     line-height: 1.65;
     max-width: 683px;
     margin-bottom: 16px;
 }
 
+.about-item button{
 .about-item button{
     width: 148px;
     height: 40px;
@@ -275,11 +306,13 @@ section {
     max-width: 1200px;
     margin: 0 auto;
     margin-bottom: 200px;
+    margin-bottom: 200px;
 }
 
 .message-section h2 {
     text-align: center;
     margin-bottom: 32px;
+
 
 }
 
@@ -291,13 +324,21 @@ section {
     width: 1200px;
     height: 440px;
     padding: 32px;
+    width: 1200px;
+    height: 440px;
+    padding: 32px;
     position: relative;
 }
 
 .quote-icon{
+.quote-icon{
     height: 70px;
     width: 70px;
 }
+
+.principal-img{
+    position: relative;
+    bottom: 200px;
 
 .principal-img{
     position: relative;
@@ -313,6 +354,7 @@ section {
 }
 
 .message-nav{
+.message-nav{
     display: flex;
     gap: 16px;
     position: absolute;
@@ -320,6 +362,7 @@ section {
     right: 32px;
 }
 
+.msg-btn{
 .msg-btn{
     width: 40px;
     height: 40px;
@@ -331,24 +374,30 @@ section {
 }
 
 .why-section{
+.why-section{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 60px;
     padding: 150px 0;
     height: 966px;
+    padding: 150px 0;
+    height: 966px;
     background-color: #d4e6c3;
     border-radius: 32px;
     max-width: 100%;
     margin-bottom:0
+    margin-bottom:0
 }
 
+.why-header{
 .why-header{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 16px;
 }
+.why-cards{
 .why-cards{
     display: flex;
     flex-wrap: wrap;
@@ -358,6 +407,7 @@ section {
 }
 
 .why-card{
+.why-card{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -366,9 +416,12 @@ section {
     background-color: white;
     width: 550px;
     height: 247px;
+    width: 550px;
+    height: 247px;
 }
 
 .why-card img {
+    margin-bottom: 16px; 
     margin-bottom: 16px; 
 }
 
@@ -376,6 +429,7 @@ section {
     margin-bottom: 4px;
 }
 
+.why-card p{
 .why-card p{
     text-align: center;
     line-height: 1.65;
@@ -387,8 +441,10 @@ section {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1; 
+    z-index: 1; 
 }
 
+.facilities-section{
 .facilities-section{
     display: flex;
     flex-direction: column;
@@ -399,21 +455,31 @@ section {
     padding: 150px;
     gap: 60px;
     margin-bottom: 0;
+    padding: 150px;
+    gap: 60px;
+    margin-bottom: 0;
 }
 
+.facilities-header{
 .facilities-header{
     text-align: center;
 }
 
 .facilities-gallery{
+.facilities-gallery{
     display: flex;
+
 
 }
 .facilities-gallery img{
     width: 360px;
     height: 381px;
+.facilities-gallery img{
+    width: 360px;
+    height: 381px;
 }
 
+.explore-btn{
 .explore-btn{
     width: 148px;
     height: 40px;
@@ -426,6 +492,7 @@ section {
 }
 
 .programs-section{
+.programs-section{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -436,8 +503,12 @@ section {
     padding: 150px;
     gap: 60px;
     margin-bottom: 0;
+    padding: 150px;
+    gap: 60px;
+    margin-bottom: 0;
 }
 
+.programs-header{
 .programs-header{
     display: flex;
     flex-direction: column;
@@ -445,11 +516,13 @@ section {
 }
 
 .program-cards{
+.program-cards{
     display: flex;
     justify-content: center;
     gap: 24px;
 }
 
+.program-card{
 .program-card{
     display: flex;
     flex-direction: column;
@@ -458,9 +531,12 @@ section {
     border-radius: 20px;
     width: 424px;
     height: 300px;
+    width: 424px;
+    height: 300px;
 }
 
 .program-card img {
+    margin-bottom: 16px; 
     margin-bottom: 16px; 
 }
 
@@ -469,22 +545,28 @@ section {
 }
 
 .program-card p{
+.program-card p{
     text-align: center;
     line-height: 1.65;
 }
 
 .program-card:nth-child(1){
     background-color: #239FEB
+.program-card:nth-child(1){
+    background-color: #239FEB
 }
 
+.program-card:nth-child(2){
 .program-card:nth-child(2){
     background-color: #32BC3E;
 }
 
 .program-card:nth-child(3){
+.program-card:nth-child(3){
     background-color: #EA2325;
 }
 
+.notice-section{
 .notice-section{
     display: flex;
     flex-direction: column;
@@ -493,13 +575,16 @@ section {
     border-radius: 32px;
     max-width: 100%;
     padding: 150px 60px;
+    padding: 150px 60px;
     gap: 32px;
 }
 
 .notice-header{
+.notice-header{
     text-align: center;
 }
 
+.notice-cards{
 .notice-cards{
     display: flex;
     flex-wrap: wrap;
@@ -509,10 +594,14 @@ section {
 }
 
 .notice-card{
+.notice-card{
     display: flex;
     flex-direction: column;
     border-radius: 20px;
     background-color: #f5f5f5;
+    width: 428px;
+    height: 253px;
+    gap:16px;
     width: 428px;
     height: 253px;
     gap:16px;
@@ -523,6 +612,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 16px;
     padding: 16px;
     background-color: #1A355B;
     color: white;
@@ -542,10 +632,12 @@ section {
 
 .notice-body {
     padding: 0 16px;
+    padding: 0 16px;
 }
 
 .notice-body h3 {
     white-space: nowrap;
+    margin-bottom: 4px;
     margin-bottom: 4px;
 }
 
