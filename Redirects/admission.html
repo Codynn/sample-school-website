@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/admission.css">
+    <title>Admission Form</title>
+</head>
+
+<body>
+
+    <header>
+        <aside class="top-bar">
+            <div class="socials">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            <div class="contact-info">
+                <span><img src="../Assets/location.png" alt="location-icon">Sitapaila, Kathmandu</span>
+                <span>|</span>
+                <span><img src="../Assets/call.png" alt="call-icon">9861234567, 9862345678</span>
+            </div>
+        </aside>
+        <nav>
+            <div class="navbar-container">
+
+                <!-- Logo + Organization Name -->
+                <a href="#" class="logo">
+                    <img src="../Assets/Logo.png" alt="Logo">
+                    <span class="org-name">Everest Academy</span>
+                </a>
+
+                <!-- Navigation Menu -->
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Facilities</a></li>
+                    <li><a href="#">Notices</a></li>
+                    <li><a href="#">Career</a></li>
+                    <li><a href="#">Admission</a></li>
+                    <li><a class="contactUsbnav" href="#">Contact Us</a></li>
+                </ul>
+
+                <!-- Hamburger -->
+                <button class="menu-toggle" id="menuToggle">Menu</button>
+
+            </div>
+        </nav>
+    </header>
+    <div id="hero-section" class="hero-section">
+        <div class="hero-content">
+            <div class="hero-title">
+                <p class="hero-subtitle">Home → Admisssion</p>
+                <h1>Admission</h1>
+            </div>
+        </div>
+    </div>
+    <div id="admission-section" class="admission-section">
+        <form id="admission-form">
+            <h2>Please fill out the form to start the application process. We will contact you with more details
+                shortly</h2>
+            <label for="full-name">Full Name<em>*</em></label>
+            <input id="full-name" type="text" placeholder="Full Name" required>
+            <div class="contact-info two-column">
+                <div>
+                    <label for="email">Email Address<em>*</em></label>
+                    <input id="email" type="email" placeholder="Email Address" required>
+                </div>
+                <div>
+                    <label for="phone">Phone Number<em>*</em></label>
+                    <input id="phone" type="text" placeholder="Phone Number" required>
+                </div>
+            </div>
+            <div class="addressDOB-info two-column">
+                <div>
+                    <label for="address">Address<em>*</em></label>
+                    <input id="address" type="text" placeholder="Address" required>
+                </div>
+                <div>
+                    <label for="dob">DOB<em>*</em></label>
+                    <input id="dob" type="date" placeholder="Date of Birth" required>
+                </div>
+            </div>
+            <label for="grade">Grade Applying For<em>*</em></label>
+            <select id="grade" required>
+                <option value="" disabled selected>Select Grade</option>
+                <option value="grade1">Grade 1</option>
+                <option value="grade2">Grade 2</option>
+                <option value="grade3">Grade 3</option>
+                <option value="grade4">Grade 4</option>
+                <option value="grade5">Grade 5</option>
+            </select>
+            <label for="additional-querries">Additional Queries</label>
+            <textarea id="additional-querries" placeholder="Any additional queries or comments?" required></textarea>
+            <button type="submit">Submit Application →</button>
+        </form>
+    </div>
+</body>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-left">
+            <header class="footer-header">
+                <img src="../Assets/Logo.png" alt="Everest Academy Logo">
+                <span>Everest Academy</span>
+            </header>
+            <p>
+                Everest Academy is committed to providing quality education that empowers
+                students with knowledge, discipline, and confidence for a better future.
+            </p>
+            <img src="../Assets/students.png" alt="Students Image">
+        </div>
+        <div class="footer-right">
+            <h3>School Hours</h3>
+            <p>Sun - Friday (9:00 AM - 5:00 PM)</p>
+
+            <h3>Follow Us:</h3>
+            <div class="socials footer-socials">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+
+            <div class="map">
+                <img src="../Assets/map.png" alt="School Location Map">
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <small>&copy; 2026 Everest Academy</small>
+        <div class="creator">
+            <span>Website By</span>
+            <img src="../Assets/me.png" alt="logo">
+        </div>
+    </div>
+    <button class="footer-btn">
+        &#8593;
+    </button>
+</footer>
+
+</html>
