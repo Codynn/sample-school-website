@@ -573,18 +573,29 @@ section {
 .far .fa-calendar{
     margin-left: 4px;
 }
+
 .notice-body {
     padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    
 }
 
 .notice-body h3 {
-    white-space: nowrap;
     margin-bottom: 4px;
 }
 
 .notice-body p {
     margin-bottom: 8px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+
 }
+
 .notice-body a {
     font-size: 14px;
     text-decoration: none;
