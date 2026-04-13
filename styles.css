@@ -222,44 +222,54 @@ section {
     background-color: var(--primary-background);
     border-radius: 100px 100px 0 0;
     padding-bottom: 200px;
+    overflow-x: hidden;
 }
 
-.stats-bar{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 32px 0;
+.stats-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 2px solid var(--primary-color);
 }
 
-.stat-item{
-    border-right: 2px solid #1A355B;
-    padding: 0 120px;
+.stat-item {
     text-align: center;
+    padding: 32px 0;
+    position: relative;
 }
 
-.stat-item h3{
+.stat-item:nth-child(1),
+.stat-item:nth-child(2) {
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.stat-item:nth-child(1)::after,
+.stat-item:nth-child(3)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 15%;
+    height: 70%;
+    width: 2px;
+    background-color: var(--primary-color);
+}
+
+.stat-item h3 {
     font-family: Sora;
     font-weight: 800;
-    font-style: ExtraBold;
-    font-size: 40px;  
-    color: var(--primary-color);  
+    font-size: 40px;
+    color: var(--primary-color);
 }
 
-.stat-item p{
+.stat-item p {
     font-family: Sora;
     font-weight: 700;
-    font-style: Bold;
     white-space: nowrap;
-    color: var(--primary-color); 
-}
-
-.stat-item:last-child{
-    border-right: none;
+    color: var(--primary-color);
 }
 
 .about-header{
     text-align: center;
-    width: 946px;
+    width: min(946px, 100%);
 }
 
 .about-section{
@@ -289,8 +299,11 @@ section {
     display: flex;
     flex-direction: column;
     max-width: 1200px;
+    width: 100%;
+    padding: 0 32px;
     margin: 0 auto;
     margin-bottom: 200px;
+    box-sizing: border-box;
 }
 
 .message-section h2 {
@@ -301,27 +314,33 @@ section {
 
 .message-content {
     display: flex;
+    flex-direction: column;          /* keep your existing layout */
     background-color: #d4e6c3;
     border-radius: 20px;
-    gap: 32px;
-    width: 1200px;
-    height: 440px;
-    padding: 32px;
+    padding: 65px 65px 80px 370px;  /* ← left padding clears the image */
     position: relative;
+    min-height: 400px;               /* ← prevents card collapsing */
 }
 
 .quote-icon{
+    position: absolute;
+    top: 10px;
+    left: 10px;
     height: 70px;
     width: 70px;
 }
 
 .principal-img{
-    position: relative;
-    bottom: 200px;
-
+    position: absolute;
+    bottom: -20px;
+    left: 0px;
+    height: 528px;
+    z-index: 10;
 }
 
 .message-text {
+    height: 100%;
+    right: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -691,7 +710,7 @@ section {
 
 .footer-left p{
     margin-bottom: 16px;
-    width: 503px;
+    width: min(503px, 100%);
 }
 
 .footer-right{
@@ -743,44 +762,48 @@ section {
 
 /* ================== RESPONSIVE ================== */
 
-/* Tablet (441px to 1024px) - Only Hamburger */
-@media (min-width: 441px) and (max-width: 1024px) {
+/* --- Nav: Desktop (≥ 1025px) --- */
+@media (min-width: 1025px) {
+    .nav-menu {
+        display: flex;
+    }
+    .menu-toggle {
+        display: none;
+    }
+}
+
+/* --- Nav: Hamburger (≤ 1024px) --- */
+@media (max-width: 1024px) {
     .navbar-container {
-        padding: 16px 32px;
         position: relative;
     }
-
     .nav-menu {
         display: none;
         flex-direction: column;
         position: absolute;
         top: 100%;
-        left: -32px;
-        right: -32px;
-        width: calc(100% + 64px);
+        left: 0;
+        right: 0;
+        width: 100%;
         background: var(--primary-background);
         padding: 0;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         gap: 0;
         align-items: flex-start;
     }
-
     .nav-menu li {
         width: 100%;
         border-bottom: 1px solid #eee;
     }
-
     .nav-menu a {
         display: block;
         padding: 15px 20px;
         color: #333;
         text-decoration: none;
     }
-
     .nav-menu a:hover {
         background-color: #f5f5f5;
     }
-
     .nav-menu .contactUsbnav {
         background: transparent;
         border: none;
@@ -788,11 +811,9 @@ section {
         color: #333;
         padding: 15px 20px;
     }
-
     .nav-menu.active {
         display: flex;
     }
-
     .menu-toggle {
         display: block;
     }
@@ -813,16 +834,7 @@ section {
     .nav-menu {
         display: none;
         flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: -16px;
-        right: -16px;
-        width: calc(100% + 32px);
-        background: var(--primary-background);
-        padding: 0;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        gap: 0;
-        align-items: flex-start;
+        align-items: center;
     }
     .nav-menu li,
     .nav-menu a {
