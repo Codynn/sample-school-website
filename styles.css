@@ -782,6 +782,12 @@ section {
         display: none;
     }
 }
+@media (max-width: 1120px) {
+    .why-center-arrow{
+        display: none;
+    }
+    
+}
 
 /* --- Nav: Hamburger (≤ 1024px) --- */
 @media (max-width: 1024px) {

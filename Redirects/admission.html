@@ -40,12 +40,12 @@
                 <!-- Navigation Menu -->
                 <ul class="nav-menu" id="navMenu">
                     <li><a href="../index.html">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Facilities</a></li>
-                    <li><a href="#">Notices</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="notices.html">Notices</a></li>
                     <li><a href="#">Career</a></li>
                     <li><a href="#">Admission</a></li>
-                    <li><a class="contactUsbnav" href="#">Contact Us</a></li>
+                    <li><a class="contactUsbnav" href="contactUs.html">Contact Us</a></li>
                 </ul>
 
                 <!-- Hamburger -->
@@ -63,7 +63,7 @@
         </div>
     </div>
     <div id="admission-section" class="admission-section">
-        <form id="admission-form">
+        <form id="admission-form" onsubmit="submitAdmissionForm(event)">
             <h2>Please fill out the form to start the application process. We will contact you with more details
                 shortly</h2>
             <label for="full-name">Full Name<em>*</em></label>
@@ -75,7 +75,8 @@
                 </div>
                 <div>
                     <label for="phone">Phone Number<em>*</em></label>
-                    <input id="phone" type="text" placeholder="Phone Number" required>
+                    <input id="phone" type="tel" minlength="10" maxlength="10" pattern="9[6-9][0-9]{8}" required
+                        placeholder="Phone Number">
                 </div>
             </div>
             <div class="addressDOB-info two-column">
@@ -85,7 +86,7 @@
                 </div>
                 <div>
                     <label for="dob">DOB<em>*</em></label>
-                    <input id="dob" type="date" placeholder="Date of Birth" required>
+                    <input id="dob" type="date" placeholder="Date of Birth" max="2026-04-15" min="1990-01-01" required>
                 </div>
             </div>
             <label for="grade">Grade Applying For<em>*</em></label>
@@ -102,6 +103,7 @@
             <button type="submit">Submit Application →</button>
         </form>
     </div>
+    <script src="./js/admission.js"></script>
 </body>
 
 <footer class="footer">
